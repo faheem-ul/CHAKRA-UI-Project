@@ -1,0 +1,16 @@
+.mainsection{
+    height: 100vh;
+    /* width: 100vh; */
+    background-image: url(E:\React\chakraUI\src\assets\Pictures\home-cover-photo.jpg);
+    background-size: cover;
+}
+
+
+
+.homeloginbtn, .supportbtn{
+    background-color:#ff7565;
+    width: 150px;
+    margin-right: 50px;
+   
+}
+
