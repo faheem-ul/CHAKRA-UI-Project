@@ -1,7 +1,20 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { Box, Heading, Flex, Stack, Button, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Flex,
+  Stack,
+  Button,
+  Text,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+} from "@chakra-ui/react";
+
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 // import "./Login.css";
 import CustomInputs from "../../Custom/CustomInputs";
@@ -50,6 +63,7 @@ function Signup() {
             <Link to="/">Reset</Link>
           </Heading>
         </Flex>
+
         <Flex sx={commonFlexProperties}>
           <Stack spacing={3}>
             <Heading color="white">Sign Up</Heading>
@@ -65,6 +79,31 @@ function Signup() {
                 </Text>
               </Link>
             </Text>
+
+            {/* start from here and make the cards */}
+            <Text color="#ff7565">Step 1</Text>
+            <Heading size="lg" color="white">
+              Select Your Plan
+            </Heading>
+
+            <Box></Box>
+            <Card
+              bgColor="black"
+              border="3px solid"
+              borderColor="#ff7565"
+              borderRadius="10px"
+              width="400px"
+            >
+              <CardBody>
+                <Heading size="md" color="white">
+                  Annual
+                </Heading>
+                <Text>
+                  View a summary of all your customers over the last month.
+                </Text>
+              </CardBody>
+            </Card>
+
             <CustomInputs placeholder="First Name" type="text" />
             <CustomInputs placeholder="Last Name" type="text" />
             <CustomInputs placeholder="Email" type="email" />
