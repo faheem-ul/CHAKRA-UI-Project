@@ -1,13 +1,24 @@
 import React from "react";
 
-import { Heading, Text, Box, Button, Flex, Icon } from "@chakra-ui/react";
+import {
+  Heading,
+  Text,
+  Box,
+  Button,
+  Flex,
+  Icon,
+  Image,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSlack } from "@fortawesome/free-brands-svg-icons";
 
+import iosSvg from "../../assets/SVGs/Ios.svg";
+import anroidSvg from "../../assets/SVGs/Android.svg";
+
 function Dashboard() {
   return (
-    <Box bgColor="#000000" height="100vh" width="100vw">
+    <Box bgColor="#000000">
       <Flex padding="50px" justifyContent="space-between" mr="100px" ml="100px">
         <Icon
           as={FontAwesomeIcon}
@@ -29,17 +40,153 @@ function Dashboard() {
 
       {/* make the input field to add the file in it */}
 
-      <Flex>
+      <Flex direction="column" alignItems="center">
         <Text color="#1e2534" size="20px" fontWeight="600px">
           Welcome Trial
         </Text>
-        <Text
-          color="white
-        "
-        >
+        <Text color="#8d9dbc" width="400px" mt="20px">
           Download the app below and login in with the same creditentials you
           just used to create your account
         </Text>
+
+        <Flex mt="30px">
+          <Image src={iosSvg} alt="this is ios svg" margin="10px" />
+          <Image src={anroidSvg} alt="this is android svg" margin="10px" />
+        </Flex>
+      </Flex>
+
+      <Flex justifyContent="center" gap="50px" mt="50px">
+        <Box width="400px">
+          <Flex direction="row" mb="20px" gap="100px" justifyItems="baseline">
+            <Heading color="white">My Account</Heading>
+            <Button
+              bgColor="#000000;"
+              color="#ff7565"
+              fontSize="16px"
+              _hover="#ff7565"
+            >
+              Edit
+            </Button>
+          </Flex>
+          <Flex
+            direction="column"
+            bgColor="#161626"
+            padding="20px"
+            borderRadius="20px"
+          >
+            <Flex padding="20px">
+              <Text color="white">Email</Text>
+              <Text color="white"></Text>
+            </Flex>
+            <Box border="1px solid" borderColor="white"></Box>
+            <Flex padding="20px">
+              <Text color="white">Password</Text>
+              <Text color="white"></Text>
+            </Flex>
+          </Flex>
+        </Box>
+
+        <Box width="400px">
+          <Flex direction="row" mb="20px" gap="150px" justifyItems="baseline">
+            <Heading color="white">My Plan</Heading>
+            <Button
+              bgColor="#000000;"
+              color="#ff7565"
+              fontSize="16px"
+              _hover="#ff7565"
+            >
+              Edit
+            </Button>
+          </Flex>
+
+          <Flex padding="20px" bgColor="#161626" borderRadius="20px">
+            <Text color="white">
+              12 Month • Best deal Term expires March 5, 2024
+            </Text>
+            <Text color="white"></Text>
+          </Flex>
+        </Box>
+      </Flex>
+
+      <Flex justifyContent="center" gap="50px" mt="50px">
+        <Box width="400px" mb="40px">
+          <Flex direction="row" mb="20px" gap="100px" justifyItems="baseline">
+            <Heading color="white">My Account</Heading>
+            <Button
+              bgColor="#000000;"
+              color="#ff7565"
+              fontSize="16px"
+              _hover="#ff7565"
+            >
+              Edit
+            </Button>
+          </Flex>
+          <Flex
+            direction="column"
+            bgColor="#161626"
+            padding="20px"
+            borderRadius="20px"
+          >
+            <Flex padding="20px">
+              <Text color="white">Age</Text>
+              <Text color="white"></Text>
+            </Flex>
+            <Box border="1px solid" borderColor="white"></Box>
+            <Flex padding="20px">
+              <Text color="white">Weight</Text>
+              <Text color="white"></Text>
+            </Flex>
+            <Box border="1px solid" borderColor="white"></Box>
+            <Flex padding="20px">
+              <Text color="white">Height</Text>
+              <Text color="white"></Text>
+            </Flex>
+            <Box border="1px solid" borderColor="white"></Box>
+            <Flex padding="20px">
+              <Text color="white">Goal</Text>
+              <Text color="white"></Text>
+            </Flex>
+          </Flex>
+        </Box>
+        <Box width="400px" mb="40px">
+          <Flex direction="row" mb="20px" gap="100px" justifyItems="baseline">
+            <Heading color="white">My Account</Heading>
+            <Button
+              bgColor="#000000;"
+              color="#ff7565"
+              fontSize="16px"
+              _hover="#ff7565"
+            >
+              Edit
+            </Button>
+          </Flex>
+          <Flex
+            direction="column"
+            bgColor="#161626"
+            padding="20px"
+            borderRadius="20px"
+          >
+            <Flex padding="20px">
+              <Text color="white">Payment Method</Text>
+              <Text color="white"></Text>
+            </Flex>
+            <Box border="1px solid" borderColor="white"></Box>
+            <Flex padding="20px">
+              <Text color="white">Card Number</Text>
+              <Text color="white"></Text>
+            </Flex>
+            <Box border="1px solid" borderColor="white"></Box>
+            <Flex padding="20px">
+              <Text color="white">Expiry Date</Text>
+              <Text color="white"></Text>
+            </Flex>
+            <Box border="1px solid" borderColor="white"></Box>
+            <Flex padding="20px">
+              <Text color="white">Email</Text>
+              <Text color="white"></Text>
+            </Flex>
+          </Flex>
+        </Box>
       </Flex>
     </Box>
   );
