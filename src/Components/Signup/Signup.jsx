@@ -16,12 +16,7 @@ import {
   CardFooter,
 } from "@chakra-ui/react";
 
-import {
-  HamburgerIcon,
-  StarIcon,
-  CheckIcon,
-  CheckCircleIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon, StarIcon, CheckIcon } from "@chakra-ui/icons";
 
 import "./Signup.css";
 import CustomInputs from "../../Custom/CustomInputs";
