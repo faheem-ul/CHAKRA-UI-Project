@@ -16,13 +16,19 @@ import {
   CardFooter,
 } from "@chakra-ui/react";
 
-import { HamburgerIcon, StarIcon, CheckIcon } from "@chakra-ui/icons";
+import {
+  HamburgerIcon,
+  StarIcon,
+  CheckIcon,
+  CheckCircleIcon,
+} from "@chakra-ui/icons";
 
 import "./Signup.css";
 import CustomInputs from "../../Custom/CustomInputs";
 
 function Signup() {
   const [expanded, setExpanded] = useState(false);
+  const [secndExpanded, setSecndExpanded] = useState(false);
   const navigate = useNavigate();
 
   const minidivCommomProperties = {
@@ -38,6 +44,12 @@ function Signup() {
 
   const handleExpand = () => {
     setExpanded(true);
+    setSecndExpanded(false);
+  };
+
+  const handleExpandSecnd = () => {
+    setSecndExpanded(true);
+    setExpanded(false);
   };
 
   const handleSignupSubmitBtn = () => {
@@ -163,10 +175,17 @@ function Signup() {
                 </Flex>
 
                 {expanded && (
-                  <CardBody>
+                  <>
                     <Heading size="small" color="white" mt="15px">
                       All programmes Included
                     </Heading>
+
+                    <Box
+                      border="1px solid"
+                      borderColor="white"
+                      mt="20px"
+                      mb="10px"
+                    ></Box>
 
                     <Box
                       overflowY="auto"
@@ -274,7 +293,7 @@ function Signup() {
                         Access To Our Exclusive Community
                       </Text>
                     </Flex>
-                  </CardBody>
+                  </>
                 )}
               </CardBody>
             </Card>
@@ -285,6 +304,7 @@ function Signup() {
               borderColor="#ff7565"
               borderRadius="30px"
               width="400px"
+              onClick={handleExpandSecnd}
               //   pointer="cursor"
             >
               <CardBody>
@@ -328,100 +348,126 @@ function Signup() {
                   </Heading>
                 </Flex>
 
-                <Heading size="small" color="white" mt="15px">
-                  All programmes Included
-                </Heading>
+                {secndExpanded && (
+                  <>
+                    <Heading size="small" color="white" mt="15px">
+                      All programmes Included
+                    </Heading>
+                    <Box
+                      border="1px solid"
+                      borderColor="white"
+                      mt="20px"
+                      mb="10px"
+                    ></Box>
 
-                <Box
-                  overflowY="auto"
-                  whiteSpace="nowrap"
-                  sx={{
-                    "::-webkit-scrollbar": {
-                      display: "none",
-                    },
-                  }}
-                >
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  >
-                    {/* <Text>Lorem ipsum dolor sit</Text> */}
-                  </Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                  <Box
-                    className="minidivs"
-                    sx={minidivCommomProperties}
-                    // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
-                  ></Box>
-                </Box>
+                    <Box
+                      overflowY="auto"
+                      whiteSpace="nowrap"
+                      sx={{
+                        "::-webkit-scrollbar": {
+                          display: "none",
+                        },
+                      }}
+                    >
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      >
+                        {/* <Text>Lorem ipsum dolor sit</Text> */}
+                      </Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                      <Box
+                        className="minidivs"
+                        sx={minidivCommomProperties}
+                        // backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\Login-page-imagr.jpg')"
+                      ></Box>
+                    </Box>
 
-                <Flex direction="row" color="white">
-                  <CheckIcon m="4px" bgColor="#ff7565" borderRadius="100px" />
-                  <Text fontWeight="bold">100+ Workouts For Any Goal</Text>
-                </Flex>
-                <Flex direction="row" color="white">
-                  <CheckIcon m="4px" bgColor="#ff7565" borderRadius="100px" />
-                  <Text fontWeight="bold">
-                    Choose Over 10 Million Branded Foods
-                  </Text>
-                </Flex>
-                <Flex direction="row" color="white">
-                  <CheckIcon m="4px" bgColor="#ff7565" borderRadius="100px" />
-                  <Text fontWeight="bold">
-                    Wide Variety Of Delicious Recipes
-                  </Text>
-                </Flex>
-                <Flex direction="row" color="white">
-                  <CheckIcon m="4px" bgColor="#ff7565" borderRadius="100px" />
-                  <Text fontWeight="bold">
-                    Access To Our Exclusive Community
-                  </Text>
-                </Flex>
+                    <Flex direction="row" color="white">
+                      <CheckIcon
+                        m="4px"
+                        bgColor="#ff7565"
+                        borderRadius="100px"
+                      />
+                      <Text fontWeight="bold">100+ Workouts For Any Goal</Text>
+                    </Flex>
+                    <Flex direction="row" color="white">
+                      <CheckIcon
+                        m="4px"
+                        bgColor="#ff7565"
+                        borderRadius="100px"
+                      />
+                      <Text fontWeight="bold">
+                        Choose Over 10 Million Branded Foods
+                      </Text>
+                    </Flex>
+                    <Flex direction="row" color="white">
+                      <CheckIcon
+                        m="4px"
+                        bgColor="#ff7565"
+                        borderRadius="100px"
+                      />
+                      <Text fontWeight="bold">
+                        Wide Variety Of Delicious Recipes
+                      </Text>
+                    </Flex>
+                    <Flex direction="row" color="white">
+                      <CheckIcon
+                        m="4px"
+                        bgColor="#ff7565"
+                        borderRadius="100px"
+                      />
+                      <Text fontWeight="bold">
+                        Access To Our Exclusive Community
+                      </Text>
+                    </Flex>
+                  </>
+                )}
               </CardBody>
             </Card>
 
