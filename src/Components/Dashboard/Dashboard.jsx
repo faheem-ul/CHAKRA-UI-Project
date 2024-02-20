@@ -13,10 +13,17 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSlack } from "@fortawesome/free-brands-svg-icons";
 
+import Model from "../../Custom/AccountModel";
 import iosSvg from "../../assets/SVGs/Ios.svg";
 import anroidSvg from "../../assets/SVGs/Android.svg";
 
 function Dashboard() {
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  //   const MyaccountModel = () => {
+  //     console.log("btn clicked");
+  //     <Model />;
+  //   };
+
   return (
     <Box bgColor="#000000">
       <Flex padding="50px" justifyContent="space-between" mr="100px" ml="100px">
@@ -59,14 +66,16 @@ function Dashboard() {
         <Box width="400px">
           <Flex direction="row" mb="20px" gap="100px" justifyItems="baseline">
             <Heading color="white">My Account</Heading>
-            <Button
+            <Model />
+            {/* <Button
               bgColor="#000000;"
               color="#ff7565"
               fontSize="16px"
               _hover="#ff7565"
+              onClick={MyaccountModel}
             >
               Edit
-            </Button>
+            </Button> */}
           </Flex>
           <Flex
             direction="column"

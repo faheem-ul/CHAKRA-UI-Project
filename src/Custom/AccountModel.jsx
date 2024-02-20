@@ -1,11 +1,32 @@
+import React from "react";
+import { useDisclosure } from "@chakra-ui/react";
+import {
+  Modal,
+  ModalBody,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  Flex,
+  Button,
+  Input,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+
 function Model() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = React.useRef(null);
 
   return (
     <>
-      <Button mt={4} onClick={onOpen}>
-        Open Modal
+      <Button
+        // mt={4}
+        onClick={onOpen}
+        bgColor="#000000;"
+        color="#ff7565"
+        fontSize="16px"
+        _hover="#ff7565"
+      >
+        Edit
       </Button>
       <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
