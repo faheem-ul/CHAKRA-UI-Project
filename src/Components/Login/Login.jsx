@@ -10,7 +10,7 @@ function Login() {
   const navigate = useNavigate();
 
   const commonFlexProperties = {
-    width: "1000px",
+    // width: "1000px",
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
@@ -23,12 +23,12 @@ function Login() {
   };
 
   return (
-    <Box bgColor="black">
-      <Flex justifyContent="space-around">
+    <Box bgColor="black" width="100vw" height={["100vh"]}>
+      <Flex gap="10px">
         <Flex
+          width={["50%", "100%"]}
           sx={commonFlexProperties}
           direction="column"
-          //   backgroundImage="url('E:\React\chakraUI\src\assets\Pictures\pexels-ketut-subiyanto-5037345.jpg')"
           backgroundSize="cover"
           className="backgroundpicdiv"
         >
@@ -50,7 +50,7 @@ function Login() {
             <Link to="/">Reset</Link>
           </Heading>
         </Flex>
-        <Flex sx={commonFlexProperties}>
+        <Flex sx={commonFlexProperties} width={["50%", "100%"]}>
           <Stack spacing={3}>
             <Heading color="white">Login</Heading>
             <Text color="rgb(141 157 188)">
@@ -71,7 +71,7 @@ function Login() {
               mt="20px"
               type="submit"
               size="lg"
-              width="400px"
+              width="320px"
               padding="30px"
               borderRadius="10px"
               color="White"

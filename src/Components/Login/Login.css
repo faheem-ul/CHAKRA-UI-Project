@@ -1,4 +1,10 @@
 .backgroundpicdiv{
     background-image: url(E:\React\chakraUI\src\assets\Pictures\pexels-ketut-subiyanto-5037345.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     
+}
+
+@media screen and (max-width:768px) {
+    .backgroundpicdiv {background-position: center;}
 }

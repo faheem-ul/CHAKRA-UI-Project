@@ -11,7 +11,7 @@ function CustomInputs({ ...props }) {
         border="none"
         color="rgb(152 167 195)"
         bgColor="rgb(22 22 38)"
-        width="400px"
+        width={["400px", "320px"]}
         borderRadius="20px"
         textColor="#ffffff"
         fontWeight="400"
