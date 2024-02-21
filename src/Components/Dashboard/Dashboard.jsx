@@ -13,8 +13,9 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSlack } from "@fortawesome/free-brands-svg-icons";
 
-import PlanModel from "../../Custom/PlanModel";
 import Model from "../../Custom/AccountModel";
+import PlanModel from "../../Custom/PlanModel";
+import ProfileModel from "../../Custom/ProfileModel";
 import iosSvg from "../../assets/SVGs/Ios.svg";
 import anroidSvg from "../../assets/SVGs/Android.svg";
 
@@ -99,15 +100,8 @@ function Dashboard() {
       <Flex justifyContent="center" gap="50px" mt="50px">
         <Box width="400px" mb="40px">
           <Flex direction="row" mb="20px" gap="100px" justifyItems="baseline">
-            <Heading color="white">My Account</Heading>
-            <Button
-              bgColor="#000000;"
-              color="#ff7565"
-              fontSize="16px"
-              _hover="#ff7565"
-            >
-              Edit
-            </Button>
+            <Heading color="white">My Profile</Heading>
+            <ProfileModel />
           </Flex>
           <Flex
             direction="column"

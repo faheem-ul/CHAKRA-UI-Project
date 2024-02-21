@@ -20,7 +20,7 @@ import {
 
 import { HamburgerIcon, StarIcon, CheckIcon } from "@chakra-ui/icons";
 import { Heading } from "@chakra-ui/react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function PlanModel() {
@@ -70,7 +70,13 @@ function PlanModel() {
       <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
 
-        <ModalContent bgColor="black" color="white">
+        <ModalContent
+          bgColor="black"
+          color="white"
+          border="2px solid"
+          borderRadius="30px"
+          borderColor="white"
+        >
           <ModalHeader>My Account</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -425,6 +431,7 @@ function PlanModel() {
             <Text
               color="white"
               cursor="pointer"
+              m="20px"
               onClick={handleCancelSubscription}
             >
               Cancel the subscription
