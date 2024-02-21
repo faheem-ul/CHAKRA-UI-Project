@@ -1,0 +1,14 @@
+/* .addimage{
+    background-image: url(E:\React\chakraUI\src\assets\Pictures\dashboardAddImage.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+} */
+body{
+    background-color:#000000;
+}::-webkit-scrollbar{
+    display: none;
+}
