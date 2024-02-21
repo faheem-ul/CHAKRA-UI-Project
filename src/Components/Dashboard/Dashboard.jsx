@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSlack } from "@fortawesome/free-brands-svg-icons";
 
+import PlanModel from "../../Custom/PlanModel";
 import Model from "../../Custom/AccountModel";
 import iosSvg from "../../assets/SVGs/Ios.svg";
 import anroidSvg from "../../assets/SVGs/Android.svg";
@@ -83,6 +84,7 @@ function Dashboard() {
         <Box width="400px">
           <Flex direction="row" mb="20px" gap="150px" justifyItems="baseline">
             <Heading color="white">My Plan</Heading>
+            <PlanModel />
           </Flex>
 
           <Flex padding="20px" bgColor="#161626" borderRadius="20px">

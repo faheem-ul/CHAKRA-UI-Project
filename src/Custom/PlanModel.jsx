@@ -1,40 +1,37 @@
 import React from "react";
 import { useState } from "react";
 
-import { Link, useNavigate } from "react-router-dom";
-
+// import { Heading } from "@chakra-ui/react";
 import {
-  Box,
-  Heading,
+  Modal,
+  ModalBody,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
   Flex,
-  Stack,
   Button,
   Text,
+  ModalCloseButton,
   Card,
-  CardHeader,
   CardBody,
-  CardFooter,
+  useDisclosure,
+  Box,
 } from "@chakra-ui/react";
 
 import { HamburgerIcon, StarIcon, CheckIcon } from "@chakra-ui/icons";
+import { Heading } from "@chakra-ui/react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import "./Signup.css";
-import CustomInputs from "../../Custom/CustomInputs";
-
-function Signup() {
+function PlanModel() {
   const [expanded, setExpanded] = useState(false);
   const [secndExpanded, setSecndExpanded] = useState(false);
-  const navigate = useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const finalRef = React.useRef(null);
 
-  const minidivCommomProperties = {
-    display: "inline-block",
-    width: "90px",
-    height: "90px",
-    margin: "10px",
-    // padding: "5px",
-    borderRadius: "30px",
-    border: "1px solid",
-    borderColor: "rgb(176, 67, 67)",
+  const handleCancelSubscription = () => {
+    onClose();
+    toast.error("Subscription Cancelled");
   };
 
   const handleExpand = () => {
@@ -47,84 +44,45 @@ function Signup() {
     setExpanded(false);
   };
 
-  const handleSignupSubmitBtn = () => {
-    // do the logics for form validation and submit button
-    // console.log("login button clicked");
-    navigate("/dashboard");
+  const minidivCommomProperties = {
+    display: "inline-block",
+    width: "90px",
+    height: "90px",
+    margin: "10px",
+    // padding: "5px",
+    borderRadius: "30px",
+    border: "1px solid",
+    borderColor: "rgb(176, 67, 67)",
   };
 
   return (
-    <Box bgColor="black">
-      <Flex justifyContent="space-around">
-        <Flex
-          width="1000px"
-          justifyContent="center"
-          alignItems="center"
-          height="100vh"
-          direction="column"
-          backgroundSize="cover"
-          className="backgroundpicdiv"
-        >
-          <Heading
-            textShadow="5px 5px 8px #000000"
-            textDecoration="none"
-            color="rgb(255, 255, 255)"
-            fontSize="50px"
-            fontWeight="bolder"
-          >
-            <Link to="/">Welcome to</Link>
-          </Heading>
-          <Heading
-            color="#201111"
-            textShadow="20px 20px 25px #fff"
-            fontSize="100px"
-          >
-            <Link to="/">Reset</Link>
-          </Heading>
-        </Flex>
+    <>
+      <Button
+        // mt={4}
+        onClick={onOpen}
+        bgColor="#000000;"
+        color="#ff7565"
+        fontSize="16px"
+        _hover="#ff7565"
+      >
+        Edit
+      </Button>
+      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
 
-        <Flex
-          cursor="pointer"
-          width="1000px"
-          justifyContent="center"
-          height="100vh"
-          overflowY="auto"
-          sx={{
-            "::webkit-scrollbar": {
-              display: "none",
-            },
-          }}
-        >
-          <Stack spacing={3}>
-            <Heading color="white" mt="20px">
-              Sign Up
-            </Heading>
-            <Text color="rgb(141 157 188)">
-              Already have an account{" "}
-              <Link to="/login">
-                <Text
-                  display="inline"
-                  textDecoration="underline"
-                  color="rgb(255 117 101)"
-                >
-                  Log In
-                </Text>
-              </Link>
-            </Text>
-
-            <Text color="#ff7565">Step 1</Text>
-            <Heading size="lg" color="white">
-              Select Your Plan
-            </Heading>
-
+        <ModalContent bgColor="black" color="white">
+          <ModalHeader>My Account</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
             <Card
-              bgColor="black"
+              bgColor="rgb(255 255 255/var(--tw-text-opacity))"
               border="3px solid"
               borderColor="#ff7565"
               borderRadius="30px"
               width="400px"
-              margin="0px"
+              marginBottom="10px"
               padding="0px"
+              cursor="pointer"
               onClick={handleExpand}
             >
               <CardBody>
@@ -299,7 +257,7 @@ function Signup() {
               borderRadius="30px"
               width="400px"
               onClick={handleExpandSecnd}
-              //   pointer="cursor"
+              cursor="pointer"
             >
               <CardBody>
                 <Flex direction="row" justifyItems="baseline">
@@ -464,32 +422,19 @@ function Signup() {
                 )}
               </CardBody>
             </Card>
-
-            <CustomInputs placeholder="First Name" type="text" />
-            <CustomInputs placeholder="Last Name" type="text" />
-            <CustomInputs placeholder="Email" type="email" />
-            <CustomInputs placeholder="Password" type="password" />
-            <Button
-              mt="20px"
-              type="submit"
-              size="lg"
-              width="400px"
-              padding="30px"
-              borderRadius="10px"
-              color="White"
-              backgroundColor="#ff7565"
-              _hover="#ff7565"
-              onClick={() => {
-                handleSignupSubmitBtn();
-              }}
+            <Text
+              color="white"
+              cursor="pointer"
+              onClick={handleCancelSubscription}
             >
-              Signup
-            </Button>
-          </Stack>
-        </Flex>
-      </Flex>
-    </Box>
+              Cancel the subscription
+            </Text>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+      {/* <ToastContainer /> */}
+    </>
   );
 }
 
-export default Signup;
+export default PlanModel;
