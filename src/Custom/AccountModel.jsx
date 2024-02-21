@@ -16,6 +16,10 @@ function Model() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = React.useRef(null);
 
+  const handleChangesBtn = () => {
+    onClose();
+  };
+
   return (
     <>
       <Button
@@ -31,7 +35,7 @@ function Model() {
       <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <Flex alignItems="center" justifyContent="center">
-          <ModalContent bgColor="black" color="white">
+          <ModalContent bgColor="orange" color="white">
             <ModalHeader>My Account</ModalHeader>
             <ModalCloseButton />
             <ModalBody padding="50px">
@@ -52,6 +56,7 @@ function Model() {
                 width="300px"
                 _hover="#ff7565"
                 padding="20px"
+                onClick={handleChangesBtn}
               >
                 Confirm Changes
               </Button>
