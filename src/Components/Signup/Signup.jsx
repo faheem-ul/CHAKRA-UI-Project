@@ -118,17 +118,22 @@ function Signup() {
             </Heading>
 
             <Card
+              as="div"
+              className="carddic"
               bgColor="black"
               border="3px solid"
               borderColor="#ff7565"
               borderRadius="30px"
               width="400px"
-              margin="0px"
-              padding="0px"
               onClick={handleExpand}
             >
-              <CardBody>
-                <Flex direction="row" justifyItems="baseline">
+              <CardBody padding="0px">
+                <Flex
+                  direction="row"
+                  justifyItems="baseline"
+                  paddingLeft="20px"
+                  pt="15px"
+                >
                   <HamburgerIcon
                     bgColor="#ff7565"
                     color="white"
@@ -141,10 +146,21 @@ function Signup() {
                   </Heading>
                 </Flex>
 
-                <Heading size="small" color="#8d9dbc" mt="5px">
+                <Heading
+                  size="small"
+                  color="#8d9dbc"
+                  mt="5px"
+                  paddingLeft="20px"
+                >
                   $9.99 USD/PER MONTH • BILLED ANNUALLY
                 </Heading>
-                <Text color="#8d9dbc" size="small" mt="10px">
+                <Text
+                  color="#8d9dbc"
+                  size="small"
+                  mt="10px"
+                  pl="20px"
+                  pr="20px"
+                >
                   At the end of your 30 day trial your subscription will
                   automatically rollover to a $119.99/year subscription billed
                   annually unless cancelled.
@@ -155,6 +171,7 @@ function Signup() {
                   justifyItems="baseline"
                   mt="10px"
                   mb="20px"
+                  paddingLeft="20px"
                 >
                   <StarIcon
                     bgColor="#ff7565"
@@ -170,7 +187,7 @@ function Signup() {
 
                 {expanded && (
                   <>
-                    <Heading size="small" color="white" mt="15px">
+                    <Heading size="small" color="white" mt="15px" pl="20px">
                       All programmes Included
                     </Heading>
 
@@ -179,6 +196,8 @@ function Signup() {
                       borderColor="white"
                       mt="20px"
                       mb="10px"
+                      ml="20px"
+                      mr="20px"
                     ></Box>
 
                     <Box
@@ -249,7 +268,7 @@ function Signup() {
                       ></Box>
                     </Box>
 
-                    <Flex direction="row" color="white">
+                    <Flex direction="row" color="white" paddingLeft="20px">
                       <CheckIcon
                         m="4px"
                         bgColor="#ff7565"
@@ -257,7 +276,7 @@ function Signup() {
                       />
                       <Text fontWeight="bold">100+ Workouts For Any Goal</Text>
                     </Flex>
-                    <Flex direction="row" color="white">
+                    <Flex direction="row" color="white" paddingLeft="20px">
                       <CheckIcon
                         m="4px"
                         bgColor="#ff7565"
@@ -267,7 +286,7 @@ function Signup() {
                         Choose Over 10 Million Branded Foods
                       </Text>
                     </Flex>
-                    <Flex direction="row" color="white">
+                    <Flex direction="row" color="white" paddingLeft="20px">
                       <CheckIcon
                         m="4px"
                         bgColor="#ff7565"
@@ -277,7 +296,7 @@ function Signup() {
                         Wide Variety Of Delicious Recipes
                       </Text>
                     </Flex>
-                    <Flex direction="row" color="white">
+                    <Flex direction="row" color="white" paddingLeft="20px">
                       <CheckIcon
                         m="4px"
                         bgColor="#ff7565"
@@ -293,16 +312,22 @@ function Signup() {
             </Card>
 
             <Card
+              as="div"
+              className="carddic"
               bgColor="black"
               border="3px solid"
               borderColor="#ff7565"
               borderRadius="30px"
               width="400px"
               onClick={handleExpandSecnd}
-              //   pointer="cursor"
             >
-              <CardBody>
-                <Flex direction="row" justifyItems="baseline">
+              <CardBody padding="0px">
+                <Flex
+                  direction="row"
+                  justifyItems="baseline"
+                  paddingLeft="20px"
+                  pt="15px"
+                >
                   <HamburgerIcon
                     bgColor="#ff7565"
                     color="white"
@@ -311,14 +336,25 @@ function Signup() {
                     height="18px"
                   />
                   <Heading size="md" color="white">
-                    Monthly
+                    Annual
                   </Heading>
                 </Flex>
 
-                <Heading size="small" color="#8d9dbc" mt="5px">
-                  $19.99 USD/PER MONTH • BILLED ANNUALLY
+                <Heading
+                  size="small"
+                  color="#8d9dbc"
+                  mt="5px"
+                  paddingLeft="20px"
+                >
+                  $9.99 USD/PER MONTH • BILLED ANNUALLY
                 </Heading>
-                <Text color="#8d9dbc" size="small" mt="10px">
+                <Text
+                  color="#8d9dbc"
+                  size="small"
+                  mt="10px"
+                  pl="20px"
+                  pr="20px"
+                >
                   At the end of your 30 day trial your subscription will
                   automatically rollover to a $119.99/year subscription billed
                   annually unless cancelled.
@@ -329,6 +365,7 @@ function Signup() {
                   justifyItems="baseline"
                   mt="10px"
                   mb="20px"
+                  paddingLeft="20px"
                 >
                   <StarIcon
                     bgColor="#ff7565"
@@ -344,14 +381,17 @@ function Signup() {
 
                 {secndExpanded && (
                   <>
-                    <Heading size="small" color="white" mt="15px">
+                    <Heading size="small" color="white" mt="15px" pl="20px">
                       All programmes Included
                     </Heading>
+
                     <Box
                       border="1px solid"
                       borderColor="white"
                       mt="20px"
                       mb="10px"
+                      ml="20px"
+                      mr="20px"
                     ></Box>
 
                     <Box
@@ -422,7 +462,7 @@ function Signup() {
                       ></Box>
                     </Box>
 
-                    <Flex direction="row" color="white">
+                    <Flex direction="row" color="white" paddingLeft="20px">
                       <CheckIcon
                         m="4px"
                         bgColor="#ff7565"
@@ -430,7 +470,7 @@ function Signup() {
                       />
                       <Text fontWeight="bold">100+ Workouts For Any Goal</Text>
                     </Flex>
-                    <Flex direction="row" color="white">
+                    <Flex direction="row" color="white" paddingLeft="20px">
                       <CheckIcon
                         m="4px"
                         bgColor="#ff7565"
@@ -440,7 +480,7 @@ function Signup() {
                         Choose Over 10 Million Branded Foods
                       </Text>
                     </Flex>
-                    <Flex direction="row" color="white">
+                    <Flex direction="row" color="white" paddingLeft="20px">
                       <CheckIcon
                         m="4px"
                         bgColor="#ff7565"
@@ -450,7 +490,7 @@ function Signup() {
                         Wide Variety Of Delicious Recipes
                       </Text>
                     </Flex>
-                    <Flex direction="row" color="white">
+                    <Flex direction="row" color="white" paddingLeft="20px">
                       <CheckIcon
                         m="4px"
                         bgColor="#ff7565"
@@ -464,6 +504,10 @@ function Signup() {
                 )}
               </CardBody>
             </Card>
+
+            <Heading color="white" mt="10px" ml="10px" pr="10px">
+              Create Your Account
+            </Heading>
 
             <CustomInputs placeholder="First Name" type="text" />
             <CustomInputs placeholder="Last Name" type="text" />

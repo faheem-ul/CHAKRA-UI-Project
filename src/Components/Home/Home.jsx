@@ -13,7 +13,7 @@ function Home() {
   };
   return (
     <Box className="mainsection">
-      <Box width="1400px">
+      <Box width={["500px", "500px", "1400px"]}>
         <Flex justifyContent="end" gap="30px" justify="baseline">
           <Button
             mt="50px"

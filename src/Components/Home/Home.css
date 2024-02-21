@@ -14,3 +14,10 @@
    
 }
 
+
+@media screen and (max-width:768px){
+    
+    .mainsection{
+        background-position: center;
+    }
+}

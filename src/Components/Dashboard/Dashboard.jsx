@@ -24,6 +24,7 @@ import iosSvg from "../../assets/SVGs/Ios.svg";
 import anroidSvg from "../../assets/SVGs/Android.svg";
 import "./Dashboard.css";
 import CameraIcon from "../../assets/Pictures/dashboardAddImage.webp";
+import { wrap } from "framer-motion";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -87,7 +88,12 @@ function Dashboard() {
         </Flex>
       </Flex>
 
-      <Flex justifyContent="center" gap="50px" mt="50px">
+      <Flex
+        justifyContent="center"
+        gap="50px"
+        mt="50px"
+        flexWrap={["nowrap", "wrap", "wrap"]}
+      >
         <Box width="400px">
           <Flex direction="row" mb="20px" gap="100px" justifyItems="baseline">
             <Heading color="white">My Account</Heading>
@@ -134,7 +140,12 @@ function Dashboard() {
         </Box>
       </Flex>
 
-      <Flex justifyContent="center" gap="50px" mt="50px">
+      <Flex
+        justifyContent="center"
+        gap="50px"
+        mt="50px"
+        flexWrap={["nowrap", "wrap", "wrap"]}
+      >
         <Box width="400px" mb="40px">
           <Flex direction="row" mb="20px" gap="100px" justifyItems="baseline">
             <Heading color="white">My Profile</Heading>
