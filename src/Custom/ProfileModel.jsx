@@ -23,6 +23,9 @@ function ProfileModel() {
   const [Cm, setCm] = useState(false);
   const [feet, setFeet] = useState(true);
   const [value, setValue] = React.useState("1");
+  const [age, SetAge] = useState(null);
+  const [weight, SetWeight] = useState(null);
+  const [height, SetHeight] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = React.useRef(null);
 
@@ -38,6 +41,18 @@ function ProfileModel() {
     setFeet(true);
     setCm(false);
   };
+
+  const handleAge = (e) => {
+    // console.log(age);
+    SetAge(e.target.value);
+  };
+  const handleWeight = (e) => {
+    SetWeight(e.target.value);
+  };
+  const handleHeight = (e) => {
+    SetHeight(e.target.value);
+  };
+
   return (
     <>
       <Button
@@ -70,6 +85,7 @@ function ProfileModel() {
                 padding="25px"
                 marginBottom="20px"
                 width="350px"
+                onChange={handleAge}
               />
               <Input
                 bgColor="rgb(22 22 38/var(--tw-bg-opacity))"
@@ -78,6 +94,7 @@ function ProfileModel() {
                 padding="25px"
                 marginBottom="20px"
                 width="350px"
+                onChange={handleWeight}
               />
 
               <Flex direction="row">
@@ -89,6 +106,7 @@ function ProfileModel() {
                       marginBottom="20px"
                       width="350px"
                       padding="25px"
+                      onChange={handleHeight}
                     />
                   </>
                 )}
@@ -101,6 +119,7 @@ function ProfileModel() {
                       marginBottom="20px"
                       width="175px"
                       padding="25px"
+                      onChange={handleHeight}
                     />
                     <Input
                       bgColor="rgb(22 22 38/var(--tw-bg-opacity))"
@@ -108,6 +127,7 @@ function ProfileModel() {
                       marginBottom="20px"
                       width="175px"
                       padding="25px"
+                      onChange={handleHeight}
                     />
                   </>
                 )}

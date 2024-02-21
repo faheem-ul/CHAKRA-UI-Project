@@ -12,7 +12,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 
-function Model() {
+function PaymentModel() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = React.useRef(null);
 
@@ -42,23 +42,39 @@ function Model() {
             borderRadius="30px"
             borderColor="white"
           >
-            <ModalHeader>My Account</ModalHeader>
+            <ModalHeader>My Payment Method</ModalHeader>
             <ModalCloseButton />
             <ModalBody padding="50px">
               <Input
-                bgColor="rgb(254 235 205)"
-                placeholder="Email cannot be changed"
+                placeholder="123 1234 1234"
+                padding="25px"
                 marginBottom="20px"
                 width="350px"
-                padding="25px"
+                borderRadius="15px"
+                borderColor="white"
               />
-              <Input
-                bgColor="rgb(190 227 248)"
-                placeholder="Change your password"
-                marginBottom="20px"
-                width="350px"
-                padding="25px"
-              />
+              <Flex direction="row">
+                <Input
+                  bgColor="rgb(22 22 38/var(--tw-bg-opacity))"
+                  type="date"
+                  placeholder="MM/DD"
+                  marginBottom="20px"
+                  width="150px"
+                  mr="10px"
+                  padding="25px"
+                  borderColor="white"
+                />
+                <Input
+                  bgColor="rgb(22 22 38/var(--tw-bg-opacity))"
+                  type="text"
+                  placeholder="CVC"
+                  marginBottom="20px"
+                  width="150px"
+                  padding="25px"
+                  borderColor="white"
+                />
+              </Flex>
+
               <Button
                 bgColor="#ff7565"
                 width="350px"
@@ -66,7 +82,7 @@ function Model() {
                 padding="25px"
                 onClick={handleChangesBtn}
               >
-                Confirm Changes
+                Save
               </Button>
             </ModalBody>
           </ModalContent>
@@ -76,4 +92,4 @@ function Model() {
   );
 }
 
-export default Model;
+export default PaymentModel;

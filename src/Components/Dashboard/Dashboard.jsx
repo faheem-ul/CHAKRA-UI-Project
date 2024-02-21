@@ -9,17 +9,24 @@ import {
   Icon,
   Image,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSlack } from "@fortawesome/free-brands-svg-icons";
 
 import Model from "../../Custom/AccountModel";
 import PlanModel from "../../Custom/PlanModel";
 import ProfileModel from "../../Custom/ProfileModel";
+import PaymentModel from "../../Custom/PaymentModel";
 import iosSvg from "../../assets/SVGs/Ios.svg";
 import anroidSvg from "../../assets/SVGs/Android.svg";
 
-function Dashboard() {
+function Dashboard({ age, height, weight, value }) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/");
+    console.log(age);
+  };
   return (
     <Box bgColor="#000000">
       <Flex padding="50px" justifyContent="space-between" mr="100px" ml="100px">
@@ -35,6 +42,7 @@ function Dashboard() {
           colorScheme="white"
           _hover="#ff7565"
           fontSize="20px"
+          onClick={handleLogout}
           //   padding="50px"
         >
           Logout
@@ -109,22 +117,22 @@ function Dashboard() {
             padding="20px"
             borderRadius="20px"
           >
-            <Flex padding="20px">
+            <Flex padding="20px" justifyContent="space-between">
               <Text color="white">Age</Text>
               <Text color="white"></Text>
             </Flex>
             <Box border="1px solid" borderColor="white"></Box>
-            <Flex padding="20px">
+            <Flex padding="20px" justifyContent="space-between">
               <Text color="white">Weight</Text>
-              <Text color="white"></Text>
+              <Text color="white">{weight}</Text>
             </Flex>
             <Box border="1px solid" borderColor="white"></Box>
-            <Flex padding="20px">
+            <Flex padding="20px" justifyContent="space-between">
               <Text color="white">Height</Text>
-              <Text color="white"></Text>
+              <Text color="white">fff</Text>
             </Flex>
             <Box border="1px solid" borderColor="white"></Box>
-            <Flex padding="20px">
+            <Flex padding="20px" justifyContent="space-between">
               <Text color="white">Goal</Text>
               <Text color="white"></Text>
             </Flex>
@@ -132,15 +140,8 @@ function Dashboard() {
         </Box>
         <Box width="400px" mb="40px">
           <Flex direction="row" mb="20px" gap="100px" justifyItems="baseline">
-            <Heading color="white">My Account</Heading>
-            <Button
-              bgColor="#000000;"
-              color="#ff7565"
-              fontSize="16px"
-              _hover="#ff7565"
-            >
-              Edit
-            </Button>
+            <Heading color="white">Payment</Heading>
+            <PaymentModel />
           </Flex>
           <Flex
             direction="column"
