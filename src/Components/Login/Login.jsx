@@ -5,15 +5,14 @@ import { Box, Heading, Flex, Stack, Button, Text } from "@chakra-ui/react";
 
 import "./Login.css";
 import CustomInputs from "../../Custom/CustomInputs";
+import { wrap } from "framer-motion";
 
 function Login() {
   const navigate = useNavigate();
 
   const commonFlexProperties = {
-    // width: "1000px",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
   };
 
   const handleLoginSubmitBtn = () => {
@@ -23,10 +22,11 @@ function Login() {
   };
 
   return (
-    <Box bgColor="black" width="100vw" height={["100vh"]}>
-      <Flex gap="10px">
+    <Box bgColor="black" width="100vw" height={{ base: "100vh", md: "100vh" }}>
+      <Flex gap="10px" direction={{ base: "column", md: "row" }}>
         <Flex
-          width={["50%", "100%"]}
+          width={{ base: "100%", md: "50%" }}
+          height={{ base: "50vh", md: "100vh" }}
           sx={commonFlexProperties}
           direction="column"
           backgroundSize="cover"
@@ -43,16 +43,19 @@ function Login() {
           </Heading>
           <Heading
             color="#201111"
-            // -webkit-text-stroke: 1px #fff;
             textShadow="20px 20px 25px #fff"
             fontSize="100px"
           >
             <Link to="/">Reset</Link>
           </Heading>
         </Flex>
-        <Flex sx={commonFlexProperties} width={["50%", "100%"]}>
+        <Flex
+          sx={commonFlexProperties}
+          width={{ base: "100%", md: "50%" }}
+          height={{ base: "40vh", md: "100vh" }}
+        >
           <Stack spacing={3}>
-            <Heading color="white">Login</Heading>
+            <Heading color="white">Log In</Heading>
             <Text color="rgb(141 157 188)">
               Don't have an account{" "}
               <Link to="/signup">
@@ -69,9 +72,10 @@ function Login() {
             <CustomInputs placeholder="Password" type="password" />
             <Button
               mt="20px"
+              // ml={["20px", "null"]}
               type="submit"
               size="lg"
-              width="320px"
+              width={["350px"]}
               padding="30px"
               borderRadius="10px"
               color="White"

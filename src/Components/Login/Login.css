@@ -6,5 +6,7 @@
 }
 
 @media screen and (max-width:768px) {
-    .backgroundpicdiv {background-position: center;}
+    .backgroundpicdiv{
+    background-position: center;
+}
 }

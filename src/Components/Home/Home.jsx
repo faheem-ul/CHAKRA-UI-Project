@@ -42,8 +42,7 @@ function Home() {
         direction="column"
         justifyContent="center"
         alignItems="center"
-        height={["80vh", "600px"]}
-        mt={[null, "170px"]}
+        height={["80vh", "80vh"]}
       >
         <Heading
           color="#ffffff"
