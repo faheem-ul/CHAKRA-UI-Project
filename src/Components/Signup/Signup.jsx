@@ -55,12 +55,18 @@ function Signup() {
 
   return (
     <Box bgColor="black">
-      <Flex justifyContent="space-around">
+      <Flex
+        height={{ base: "100vh", md: "100vh" }}
+        width={{ base: "100vw", md: "100vw" }}
+        justifyContent="space-around"
+        direction={{ base: "column", md: "row" }}
+      >
         <Flex
-          width="1000px"
+          height={{ base: "50%", md: "100%" }}
+          width={{ base: "100%", md: "50%" }}
+          // width="1000px"
           justifyContent="center"
           alignItems="center"
-          height="100vh"
           direction="column"
           backgroundSize="cover"
           className="backgroundpicdiv"
@@ -84,10 +90,10 @@ function Signup() {
         </Flex>
 
         <Flex
+          height={{ base: "50%", md: "100%" }}
+          width={{ base: "100%", md: "50%" }}
           cursor="pointer"
-          width="1000px"
           justifyContent="center"
-          height="100vh"
           overflowY="auto"
           sx={{
             "::webkit-scrollbar": {
@@ -514,14 +520,14 @@ function Signup() {
             <CustomInputs placeholder="Email" type="email" />
             <CustomInputs placeholder="Password" type="password" />
             <Button
-              mt="20px"
               type="submit"
               size="lg"
-              width="400px"
+              width="350px"
               padding="30px"
               borderRadius="10px"
               color="White"
               backgroundColor="#ff7565"
+              marginBottom="50px"
               _hover="#ff7565"
               onClick={() => {
                 handleSignupSubmitBtn();
